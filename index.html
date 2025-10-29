@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RIT Login</title>
+  <title>RIT Search</title>
   <style>
-    /* General styling */
     body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #002b5c, #004b9a);
@@ -14,129 +13,85 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      color: white;
     }
 
-    /* Login container */
-    .login-container {
+    .search-container {
       background-color: white;
-      border-radius: 16px;
-      padding: 40px;
-      width: 360px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      text-align: center;
-    }
-
-    /* Logo */
-    .logo img {
-      width: 100px;
-      margin-bottom: 15px;
-    }
-
-    /* Headings */
-    h2 {
       color: #002b5c;
-      margin-bottom: 5px;
+      padding: 40px;
+      border-radius: 16px;
+      width: 400px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
     }
 
-    .tagline {
-      font-size: 0.9em;
-      color: #888;
-      margin-bottom: 25px;
-    }
-
-    /* Input fields */
-    .input-group {
-      text-align: left;
+    .search-container h2 {
       margin-bottom: 20px;
+      font-size: 1.5em;
+      color: #004b9a;
     }
 
-    .input-group label {
-      font-size: 0.9em;
-      color: #333;
+    .search-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
     }
 
-    .input-group input {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      margin-top: 5px;
-      transition: border-color 0.3s;
-    }
-
-    .input-group input:focus {
-      border-color: #004b9a;
-      outline: none;
-    }
-
-    /* Button */
-    .btn {
+    .search-box input[type="text"] {
       width: 100%;
       padding: 12px;
-      background-color: #004b9a;
-      border: none;
-      color: white;
       border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
+      border: 1px solid #ccc;
+      font-size: 1em;
+      outline: none;
       transition: 0.3s;
     }
 
-    .btn:hover {
+    .search-box input[type="text"]:focus {
+      border-color: #004b9a;
+    }
+
+    .search-box button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #004b9a;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .search-box button:hover {
       background-color: #003875;
     }
 
-    /* Footer */
-    .footer-text {
-      margin-top: 15px;
+    .footer {
+      margin-top: 20px;
       font-size: 0.85em;
+      color: #555;
     }
 
-    .footer-text a {
-      color: #004b9a;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .footer-text a:hover {
-      text-decoration: underline;
-    }
-
-    /* Responsive design */
-    @media (max-width: 420px) {
-      .login-container {
+    @media (max-width: 480px) {
+      .search-container {
         width: 90%;
         padding: 25px;
-      }
-
-      .logo img {
-        width: 80px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="login-container">
-    <div class="logo">
-      <img src="C:\Users\shiva\OneDrive\Pictures\rit logo.png" alt="RIT Logo">
-    </div>
-    <h2>Rajalakshmi Institute of Technology</h2>
-    <p class="tagline">Believe in the Possibilities</p>
-
-    <form>
-      <div class="input-group">
-        <label for="username">Username</label>
-        <input type="text" id="username" placeholder="Enter your username" required>
+  <div class="search-container">
+    <h2>Search the RIT Portal</h2>
+    <form action="https://formspree.io/f/mqagbbja" method="POST">
+      <div class="search-box">
+        <input type="text" name="query" placeholder="Type something to search..." required>
+        <button type="submit">Search</button>
       </div>
-
-      <div class="input-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Enter your password" required>
-      </div>
-
-      <button type="submit" class="btn">Login</button>
-      <p class="footer-text">Forgot Password? <a href="#">Click here</a></p>
     </form>
+    <div class="footer">Powered by Rajalakshmi Institute of Technology</div>
   </div>
 </body>
 </html>
